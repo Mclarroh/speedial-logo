@@ -146,17 +146,11 @@
         .brand-name {
             font-size: 64px;
             font-weight: 900;
-            background: linear-gradient(135deg, #00d4ff 0%, #0096ff 50%, #00d4ff 100%);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-fill-color: transparent;
+            color: #00d4ff;
             letter-spacing: 8px;
             text-transform: uppercase;
-            animation: textShimmer 3s linear infinite;
+            text-shadow: 0 0 20px rgba(0, 200, 255, 0.5);
             margin-bottom: 12px;
-            filter: drop-shadow(0 0 20px rgba(0, 200, 255, 0.5));
             display: inline-block;
             position: relative;
         }
@@ -406,12 +400,6 @@
             20% { opacity: 1; }
             80% { opacity: 1; }
             100% { left: 100%; opacity: 0; }
-        }
-
-        @keyframes textShimmer {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
 
         @keyframes textGlow {
