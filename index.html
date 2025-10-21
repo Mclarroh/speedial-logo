@@ -1,653 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Speedial Autoshop - Premium Logo</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speedial Autoshop - Propulsion Logo</title>
+<style>
+/* Base Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000428 0%, #004e92 100%);
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+  position: relative;
+}
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #000428 0%, #004e92 100%);
-            font-family: 'Arial', sans-serif;
-            overflow: hidden;
-            position: relative;
-        }
+/* Floating particles */
+.particle {
+  position: absolute;
+  width: 4px; height: 4px;
+  background: rgba(0,150,255,0.6);
+  border-radius: 50%;
+  animation: particleFloat 8s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(0,150,255,0.8);
+}
+.particle:nth-child(1){left:10%;top:20%;animation-delay:0s;animation-duration:6s;}
+.particle:nth-child(2){left:20%;top:80%;animation-delay:1s;animation-duration:8s;}
+.particle:nth-child(3){left:80%;top:30%;animation-delay:2s;animation-duration:7s;}
+.particle:nth-child(4){left:70%;top:70%;animation-delay:3s;animation-duration:9s;}
+.particle:nth-child(5){left:40%;top:10%;animation-delay:1.5s;animation-duration:7.5s;}
+.particle:nth-child(6){left:90%;top:50%;animation-delay:2.5s;animation-duration:8.5s;}
 
-        /* Animated particles */
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(0, 150, 255, 0.6);
-            border-radius: 50%;
-            animation: particleFloat 8s ease-in-out infinite;
-            box-shadow: 0 0 10px rgba(0, 150, 255, 0.8);
-        }
+/* Logo Container */
+.logo-container {
+  position: relative;
+  width: 650px;
+  background: linear-gradient(135deg, rgba(10,25,47,0.95), rgba(15,35,65,0.95));
+  border-radius: 40px;
+  padding: 50px 40px;
+  box-shadow: 0 30px 90px rgba(0,0,0,0.6),
+              inset 0 0 80px rgba(0,150,255,0.1),
+              0 0 100px rgba(0,150,255,0.4);
+  border: 3px solid rgba(0,150,255,0.3);
+  animation: containerFloat 5s ease-in-out infinite;
+  z-index: 10;
+}
 
-        .particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; animation-duration: 6s; }
-        .particle:nth-child(2) { left: 20%; top: 80%; animation-delay: 1s; animation-duration: 8s; }
-        .particle:nth-child(3) { left: 80%; top: 30%; animation-delay: 2s; animation-duration: 7s; }
-        .particle:nth-child(4) { left: 70%; top: 70%; animation-delay: 3s; animation-duration: 9s; }
-        .particle:nth-child(5) { left: 40%; top: 10%; animation-delay: 1.5s; animation-duration: 7.5s; }
-        .particle:nth-child(6) { left: 90%; top: 50%; animation-delay: 2.5s; animation-duration: 8.5s; }
+/* Brand Header */
+.brand-header {
+  text-align: center;
+  margin-bottom: 35px;
+  overflow: hidden;
+  position: relative;
+}
 
-        .logo-container {
-            position: relative;
-            width: 650px;
-            background: linear-gradient(135deg, rgba(10, 25, 47, 0.95), rgba(15, 35, 65, 0.95));
-            border-radius: 40px;
-            padding: 50px 40px;
-            box-shadow: 
-                0 30px 90px rgba(0, 0, 0, 0.6),
-                inset 0 0 80px rgba(0, 150, 255, 0.1),
-                0 0 100px rgba(0, 150, 255, 0.4);
-            border: 3px solid rgba(0, 150, 255, 0.3);
-            animation: containerFloat 5s ease-in-out infinite;
-            z-index: 10;
-        }
+/* Text Animation */
+.brand-name, .tagline {
+  display: inline-block;
+  position: relative;
+  animation: arrowPropulsionLoop 3s cubic-bezier(0.6, 0, 0.4, 1) infinite;
+  background: linear-gradient(135deg, #00d4ff 0%, #0096ff 50%, #00d4ff 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-        /* Top section with car */
-        .car-showcase {
-            position: relative;
-            width: 100%;
-            height: 320px;
-            margin-bottom: 40px;
-            border-radius: 25px;
-            overflow: hidden;
-            background: linear-gradient(180deg, rgba(0, 50, 100, 0.4) 0%, rgba(0, 20, 50, 0.6) 100%);
-            box-shadow: inset 0 0 50px rgba(0, 150, 255, 0.2);
-        }
+.brand-name {
+  font-size: 64px;
+  font-weight: 900;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  filter: drop-shadow(0 0 30px rgba(0,200,255,0.6));
+  animation-delay: 0s;
+}
+.tagline {
+  display: block;
+  margin-top: 10px;
+  font-size: 22px;
+  color: #00d4ff;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-shadow: 0 0 25px rgba(0,212,255,0.8);
+  animation-delay: 1s;
+}
 
-        /* Animated road */
-        .road {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 100px;
-            background: linear-gradient(180deg, transparent 0%, rgba(40, 40, 40, 0.8) 100%);
-            z-index: 1;
-        }
+/* Propulsion Streak (Glow Trail) */
+.brand-header::after {
+  content: "";
+  position: absolute;
+  top: 55%;
+  left: -150px;
+  width: 120px;
+  height: 8px;
+  background: linear-gradient(90deg, rgba(0,255,255,0.0), rgba(0,200,255,0.8), rgba(0,255,255,0));
+  border-radius: 50px;
+  animation: arrowTrailLoop 3s linear infinite;
+  filter: blur(4px);
+}
 
-        .road-line {
-            position: absolute;
-            bottom: 40px;
-            width: 80px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.8);
-            animation: roadMove 1.5s linear infinite;
-        }
+/* Repeated propulsion motion */
+@keyframes arrowPropulsionLoop {
+  0%   { transform: translateX(-25%) scale(0.97); opacity: 0.7; }
+  25%  { transform: translateX(10%) scale(1.03); opacity: 1; }
+  50%  { transform: translateX(0%) scale(1); opacity: 1; }
+  75%  { transform: translateX(10%) scale(1.02); opacity: 1; }
+  100% { transform: translateX(-25%) scale(0.97); opacity: 0.7; }
+}
 
-        .road-line:nth-child(1) { left: -80px; animation-delay: 0s; }
-        .road-line:nth-child(2) { left: -80px; animation-delay: 0.3s; }
-        .road-line:nth-child(3) { left: -80px; animation-delay: 0.6s; }
-        .road-line:nth-child(4) { left: -80px; animation-delay: 0.9s; }
-        .road-line:nth-child(5) { left: -80px; animation-delay: 1.2s; }
+/* Repeating trail movement */
+@keyframes arrowTrailLoop {
+  0%   { left: -150px; opacity: 0; }
+  25%  { opacity: 1; }
+  75%  { left: 120%; opacity: 1; }
+  100% { left: 150%; opacity: 0; }
+}
 
-        /* Real car image using SVG as placeholder */
-        .car-image {
-            position: absolute;
-            width: 500px;
-            height: auto;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -55%);
-            filter: drop-shadow(0 30px 60px rgba(0, 100, 255, 0.6));
-            animation: carDrive 4s ease-in-out infinite;
-            z-index: 3;
-        }
+/* Floating background motion */
+@keyframes particleFloat {
+  0%,100%{transform:translate(0,0)scale(1);opacity:0.4;}
+  25%{transform:translate(20px,-30px)scale(1.3);opacity:0.8;}
+  50%{transform:translate(-15px,-50px)scale(1);opacity:0.5;}
+  75%{transform:translate(25px,-35px)scale(1.2);opacity:0.7;}
+}
 
-        /* Spotlight effect */
-        .spotlight {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
-            border-radius: 50%;
-            top: -100px;
-            animation: spotlightSweep 6s ease-in-out infinite;
-            filter: blur(50px);
-            z-index: 2;
-        }
-
-        /* Speed effects */
-        .speed-line {
-            position: absolute;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, rgba(0, 200, 255, 0.8), transparent);
-            animation: speedZoom 1s linear infinite;
-            z-index: 2;
-        }
-
-        .speed-line:nth-child(1) { top: 25%; width: 120px; animation-delay: 0s; }
-        .speed-line:nth-child(2) { top: 40%; width: 150px; animation-delay: 0.2s; }
-        .speed-line:nth-child(3) { top: 55%; width: 100px; animation-delay: 0.4s; }
-        .speed-line:nth-child(4) { top: 70%; width: 130px; animation-delay: 0.6s; }
-
-        /* Branding section */
-        .brand-header {
-            text-align: center;
-            margin-bottom: 35px;
-        }
-
-        .brand-name {
-            font-size: 70px;
-            font-weight: 900;
-            background: linear-gradient(135deg, #00d4ff 0%, #0096ff 50%, #00d4ff 100%);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: 8px;
-            text-transform: uppercase;
-            animation: textShimmer 3s linear infinite;
-            margin-bottom: 12px;
-            filter: drop-shadow(0 0 30px rgba(0, 200, 255, 0.6));
-            display: inline-block;
-        }
-
-        .brand-name span {
-            display: inline-block;
-            animation: arrowPropel 1.5s ease-out infinite;
-        }
-
-        .tagline {
-            font-size: 18px;
-            color: #00d4ff;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            font-weight: 700;
-            text-shadow: 0 0 25px rgba(0, 212, 255, 0.8);
-            animation: textGlow 2s ease-in-out infinite;
-            display: inline-block;
-        }
-
-        .tagline span {
-            display: inline-block;
-            animation: arrowPropel 1.5s ease-out infinite;
-        }
-
-        /* Staggered animation delays for each letter */
-        .brand-name span:nth-child(1) { animation-delay: 0s; }
-        .brand-name span:nth-child(2) { animation-delay: 0.05s; }
-        .brand-name span:nth-child(3) { animation-delay: 0.1s; }
-        .brand-name span:nth-child(4) { animation-delay: 0.15s; }
-        .brand-name span:nth-child(5) { animation-delay: 0.2s; }
-        .brand-name span:nth-child(6) { animation-delay: 0.25s; }
-        .brand-name span:nth-child(7) { animation-delay: 0.3s; }
-        .brand-name span:nth-child(8) { animation-delay: 0.35s; }
-
-        .tagline span:nth-child(1) { animation-delay: 0.4s; }
-        .tagline span:nth-child(2) { animation-delay: 0.45s; }
-        .tagline span:nth-child(3) { animation-delay: 0.5s; }
-        .tagline span:nth-child(4) { animation-delay: 0.55s; }
-        .tagline span:nth-child(5) { animation-delay: 0.6s; }
-        .tagline span:nth-child(6) { animation-delay: 0.65s; }
-        .tagline span:nth-child(7) { animation-delay: 0.7s; }
-        .tagline span:nth-child(8) { animation-delay: 0.75s; }
-
-        /* Services section */
-        .services-section {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-bottom: 35px;
-        }
-
-        .service-card {
-            background: linear-gradient(135deg, rgba(0, 100, 200, 0.15), rgba(0, 50, 150, 0.1));
-            border: 2px solid rgba(0, 150, 255, 0.4);
-            border-radius: 15px;
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            transition: all 0.4s ease;
-            animation: cardFadeIn 0.8s ease-out forwards;
-            opacity: 0;
-            cursor: pointer;
-        }
-
-        .service-card:nth-child(1) { animation-delay: 0.1s; }
-        .service-card:nth-child(2) { animation-delay: 0.2s; }
-        .service-card:nth-child(3) { animation-delay: 0.3s; }
-        .service-card:nth-child(4) { animation-delay: 0.4s; }
-
-        .service-card:hover {
-            background: linear-gradient(135deg, rgba(0, 150, 255, 0.3), rgba(0, 100, 200, 0.2));
-            transform: translateX(8px);
-            box-shadow: 0 8px 30px rgba(0, 150, 255, 0.5);
-            border-color: rgba(0, 200, 255, 0.7);
-        }
-
-        .service-icon {
-            font-size: 28px;
-            filter: drop-shadow(0 0 12px rgba(0, 200, 255, 0.9));
-            animation: iconPulse 2s ease-in-out infinite;
-        }
-
-        .service-card:nth-child(1) .service-icon { animation-delay: 0s; }
-        .service-card:nth-child(2) .service-icon { animation-delay: 0.5s; }
-        .service-card:nth-child(3) .service-icon { animation-delay: 1s; }
-        .service-card:nth-child(4) .service-icon { animation-delay: 1.5s; }
-
-        .service-label {
-            font-size: 12px;
-            color: #00d4ff;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            line-height: 1.4;
-        }
-
-        /* Contact section at bottom */
-        .contact-footer {
-            text-align: center;
-            padding-top: 25px;
-            border-top: 2px solid rgba(0, 150, 255, 0.3);
-        }
-
-        .contact-text {
-            font-size: 13px;
-            color: #00d4ff;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            opacity: 0.9;
-        }
-
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .contact-btn {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 14px 30px;
-            background: linear-gradient(135deg, rgba(0, 150, 255, 0.3), rgba(0, 100, 200, 0.2));
-            border: 2px solid rgba(0, 200, 255, 0.5);
-            border-radius: 50px;
-            color: #ffffff;
-            font-weight: 800;
-            font-size: 17px;
-            letter-spacing: 1.5px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            animation: buttonGlow 2.5s ease-in-out infinite;
-            box-shadow: 0 5px 25px rgba(0, 150, 255, 0.3);
-        }
-
-        .contact-btn:hover {
-            background: linear-gradient(135deg, rgba(0, 200, 255, 0.5), rgba(0, 150, 255, 0.3));
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(0, 150, 255, 0.6);
-            border-color: rgba(0, 230, 255, 0.8);
-        }
-
-        .contact-icon {
-            font-size: 26px;
-            animation: contactIconBounce 2s ease-in-out infinite;
-        }
-
-        .contact-btn:nth-child(1) .contact-icon { animation-delay: 0s; }
-        .contact-btn:nth-child(2) .contact-icon { animation-delay: 1s; }
-
-        /* Decorative corners */
-        .corner-decoration {
-            position: absolute;
-            width: 70px;
-            height: 70px;
-            border: 3px solid rgba(0, 200, 255, 0.6);
-            animation: cornerBlink 3s ease-in-out infinite;
-        }
-
-        .corner-tl {
-            top: 30px;
-            left: 30px;
-            border-right: none;
-            border-bottom: none;
-            border-radius: 20px 0 0 0;
-        }
-
-        .corner-br {
-            bottom: 30px;
-            right: 30px;
-            border-left: none;
-            border-top: none;
-            border-radius: 0 0 20px 0;
-            animation-delay: 1.5s;
-        }
-
-        /* Animations */
-        @keyframes particleFloat {
-            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
-            25% { transform: translate(20px, -30px) scale(1.3); opacity: 0.8; }
-            50% { transform: translate(-15px, -50px) scale(1); opacity: 0.5; }
-            75% { transform: translate(25px, -35px) scale(1.2); opacity: 0.7; }
-        }
-
-        @keyframes containerFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        @keyframes carDrive {
-            0%, 100% { 
-                transform: translate(-50%, -55%) scale(1);
-            }
-            50% { 
-                transform: translate(-50%, -60%) scale(1.05);
-            }
-        }
-
-        @keyframes spotlightSweep {
-            0%, 100% { left: -50px; }
-            50% { left: 70%; }
-        }
-
-        @keyframes roadMove {
-            0% { left: -80px; opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { left: 100%; opacity: 0; }
-        }
-
-        @keyframes speedZoom {
-            0% { left: -150px; opacity: 0; }
-            20% { opacity: 1; }
-            80% { opacity: 1; }
-            100% { left: 100%; opacity: 0; }
-        }
-
-        @keyframes textShimmer {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes textGlow {
-            0%, 100% { text-shadow: 0 0 25px rgba(0, 212, 255, 0.8); }
-            50% { text-shadow: 0 0 40px rgba(0, 212, 255, 1); }
-        }
-
-        @keyframes arrowPropel {
-            0% { transform: translateX(-50px); opacity: 0; }
-            50% { transform: translateX(0); opacity: 1; }
-            100% { transform: translateX(0); opacity: 1; }
-        }
-
-        @keyframes cardFadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes iconPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.15); }
-        }
-
-        @keyframes buttonGlow {
-            0%, 100% { 
-                box-shadow: 0 5px 25px rgba(0, 150, 255, 0.3);
-            }
-            50% { 
-                box-shadow: 0 5px 35px rgba(0, 200, 255, 0.6);
-            }
-        }
-
-        @keyframes contactIconBounce {
-            0%, 100% { transform: scale(1) rotate(0deg); }
-            25% { transform: scale(1.2) rotate(-5deg); }
-            75% { transform: scale(1.2) rotate(5deg); }
-        }
-
-        @keyframes cornerBlink {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
-        }
-    </style>
+/* Floating effect for container */
+@keyframes containerFloat {
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-20px);}
+}
+</style>
 </head>
 <body>
-    <!-- Background particles -->
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
+  <!-- Glowing particles -->
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
 
-    <div class="logo-container">
-        <!-- Corner decorations -->
-        <div class="corner-decoration corner-tl"></div>
-        <div class="corner-decoration corner-br"></div>
-
-        <!-- Car showcase section -->
-        <div class="car-showcase">
-            <div class="spotlight"></div>
-            
-            <!-- Speed lines -->
-            <div class="speed-line"></div>
-            <div class="speed-line"></div>
-            <div class="speed-line"></div>
-            <div class="speed-line"></div>
-
-            <!-- Animated road -->
-            <div class="road">
-                <div class="road-line"></div>
-                <div class="road-line"></div>
-                <div class="road-line"></div>
-                <div class="road-line"></div>
-                <div class="road-line"></div>
-            </div>
-
-            <!-- Blue Sports Car SVG -->
-            <svg class="car-image" viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="blueCarGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:#4db8ff;stop-opacity:1" />
-                        <stop offset="50%" style="stop-color:#0080ff;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#0051cc;stop-opacity:1" />
-                    </linearGradient>
-                    <linearGradient id="windowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:#87ceeb;stop-opacity:0.6" />
-                        <stop offset="100%" style="stop-color:#4682b4;stop-opacity:0.8" />
-                    </linearGradient>
-                    <filter id="carShadow">
-                        <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
-                        <feOffset dx="3" dy="8" result="offsetblur"/>
-                        <feComponentTransfer>
-                            <feFuncA type="linear" slope="0.5"/>
-                        </feComponentTransfer>
-                        <feMerge>
-                            <feMergeNode/>
-                            <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-                    </filter>
-                </defs>
-
-                <!-- Car shadow -->
-                <ellipse cx="300" cy="250" rx="230" ry="25" fill="rgba(0, 0, 0, 0.4)" opacity="0.6"/>
-
-                <!-- Main car body - sports car profile -->
-                <path d="M 120 180 L 130 160 L 150 145 L 190 135 L 280 130 L 380 135 L 450 145 L 490 160 L 520 180 L 525 200 L 520 215 L 110 215 L 105 200 Z"
-                      fill="url(#blueCarGradient)" stroke="#0047ab" stroke-width="3" filter="url(#carShadow)"/>
-
-                <!-- Hood section -->
-                <path d="M 380 135 L 450 145 L 465 155 L 390 148 Z" fill="#0066cc" opacity="0.7"/>
-
-                <!-- Windshield and roof -->
-                <path d="M 200 135 L 220 110 L 250 100 L 360 100 L 395 110 L 420 135 Z"
-                      fill="url(#blueCarGradient)" stroke="#0047ab" stroke-width="2.5"/>
-
-                <!-- Front windshield -->
-                <path d="M 215 118 L 230 105 L 300 105 L 300 133 L 225 133 Z"
-                      fill="url(#windowGrad)" stroke="#5a9fd4" stroke-width="2"/>
-
-                <!-- Rear windshield -->
-                <path d="M 310 105 L 355 105 L 385 115 L 410 133 L 310 133 Z"
-                      fill="url(#windowGrad)" stroke="#5a9fd4" stroke-width="2"/>
-
-                <!-- Side windows -->
-                <path d="M 220 145 L 225 133 L 300 133 L 300 155 L 230 155 Z"
-                      fill="url(#windowGrad)" stroke="#5a9fd4" stroke-width="1.5"/>
-                <path d="M 310 133 L 410 133 L 418 145 L 410 155 L 310 155 Z"
-                      fill="url(#windowGrad)" stroke="#5a9fd4" stroke-width="1.5"/>
-
-                <!-- Front grille -->
-                <path d="M 505 170 L 520 170 L 522 190 L 505 190 Z" fill="#1a1a1a" stroke="#333" stroke-width="2"/>
-                <rect x="507" y="174" width="12" height="3" fill="#444"/>
-                <rect x="507" y="180" width="12" height="3" fill="#444"/>
-                <rect x="507" y="186" width="12" height="3" fill="#444"/>
-
-                <!-- Headlights (LED style) -->
-                <ellipse cx="515" cy="165" rx="10" ry="7" fill="#ffffff" opacity="1">
-                    <animate attributeName="opacity" values="0.9;1;0.9" dur="2s" repeatCount="indefinite"/>
-                </ellipse>
-                <ellipse cx="515" cy="165" rx="7" ry="5" fill="#ffffaa" opacity="0.9"/>
-
-                <!-- Lower fog light -->
-                <ellipse cx="518" cy="195" rx="5" ry="4" fill="#ffff99" opacity="0.8"/>
-
-                <!-- Tail lights -->
-                <ellipse cx="115" cy="175" rx="7" ry="16" fill="#ff0000" opacity="0.95">
-                    <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
-                </ellipse>
-                <rect x="108" y="172" width="4" height="8" fill="#cc0000" opacity="0.9"/>
-
-                <!-- Side mirror -->
-                <ellipse cx="210" cy="135" rx="10" ry="14" fill="url(#blueCarGradient)" stroke="#0047ab" stroke-width="1.5"/>
-
-                <!-- Door line -->
-                <line x1="305" y1="135" x2="305" y2="210" stroke="#0047ab" stroke-width="2.5" opacity="0.6"/>
-
-                <!-- Door handle -->
-                <rect x="280" y="160" width="15" height="4" rx="2" fill="#2a5aa8"/>
-                <rect x="360" y="160" width="15" height="4" rx="2" fill="#2a5aa8"/>
-
-                <!-- Wheels with detailed rims -->
-                <g>
-                    <!-- Front wheel -->
-                    <circle cx="445" cy="218" r="38" fill="#1a1a1a" stroke="#0a0a0a" stroke-width="5"/>
-                    <circle cx="445" cy="218" r="33" fill="#2a2a2a"/>
-                    <circle cx="445" cy="218" r="26" fill="#3a3a3a" stroke="#00a0ff" stroke-width="2.5"/>
-                    
-                    <!-- Spinning spokes -->
-                    <g stroke="#00c0ff" stroke-width="3.5" opacity="0.9">
-                        <line x1="445" y1="192" x2="445" y2="244">
-                            <animateTransform attributeName="transform" type="rotate" from="0 445 218" to="360 445 218" dur="1s" repeatCount="indefinite"/>
-                        </line>
-                        <line x1="419" y1="218" x2="471" y2="218">
-                            <animateTransform attributeName="transform" type="rotate" from="0 445 218" to="360 445 218" dur="1s" repeatCount="indefinite"/>
-                        </line>
-                        <line x1="427" y1="200" x2="463" y2="236">
-                            <animateTransform attributeName="transform" type="rotate" from="0 445 218" to="360 445 218" dur="1s" repeatCount="indefinite"/>
-                        </line>
-                        <line x1="427" y1="236" x2="463" y2="200">
-                            <animateTransform attributeName="transform" type="rotate" from="0 445 218" to="360 445 218" dur="1s" repeatCount="indefinite"/>
-                        </line>
-                    </g>
-                    
-                    <circle cx="445" cy="218" r="12" fill="#4a4a4a">
-                        <animateTransform attributeName="transform" type="rotate" from="0 445 218" to="360 445 218" dur="1s" repeatCount="indefinite"/>
-                    </circle>
-
-                    <!-- Rear wheel -->
-                    <circle cx="185" cy="218" r="38" fill="#1a1a1a" stroke="#0a0a0a" stroke-width="5"/>
-                    <circle cx="185" cy="218" r="33" fill="#2a2a2a"/>
-                    <circle cx="185" cy="218" r="26" fill="#3a3a3a" stroke="#00a0ff" stroke-width="2.5"/>
-                    
-                    <!-- Spinning spokes -->
-                    <g stroke="#00c0ff" stroke-width="3.5" opacity="0.9">
-                        <line x1="185" y1="192" x2="185" y2="244">
-                            <animateTransform attributeName="transform" type="rotate" from="0 185 218" to="360 185 218" dur="1s" repeatCount="indefinite"/>
-                        </line>
-                        <line x1="159" y1="218" x2="211" y2="218">
-                            <animateTransform attributeName="transform" type="rotate" from="0 185 218" to="360 185 218" dur="1s" repeatCount="indefinite"/>
-                        </line>
-                        <line x1="167" y1="200" x2="203" y2="236">
-                            <animateTransform attributeName="transform" type="rotate" from="0 185 218" to="360 185 218" dur="1s" repeatCount="indefinite"/>
-                        </line>
-                        <line x1="167" y1="236" x2="203" y2="200">
-                            <animateTransform attributeName="transform" type="rotate" from="0 185 218" to="360 185 218" dur="1s" repeatCount="indefinite"/>
-                        </line>
-                    </g>
-                    
-                    <circle cx="185" cy="218" r="12" fill="#4a4a4a">
-                        <animateTransform attributeName="transform" type="rotate" from="0 185 218" to="360 185 218" dur="1s" repeatCount="indefinite"/>
-                    </circle>
-                </g>
-
-                <!-- Body reflections/shine -->
-                <ellipse cx="350" cy="145" rx="90" ry="15" fill="white" opacity="0.25">
-                    <animate attributeName="opacity" values="0.2;0.35;0.2" dur="3s" repeatCount="indefinite"/>
-                </ellipse>
-                <ellipse cx="280" cy="105" rx="60" ry="10" fill="white" opacity="0.3">
-                    <animate attributeName="opacity" values="0.25;0.4;0.25" dur="2.5s" repeatCount="indefinite"/>
-                </ellipse>
-
-                <!-- Spoiler -->
-                <path d="M 125 140 L 130 135 L 155 135 L 158 140 Z" fill="#0051cc" opacity="0.9"/>
-            </svg>
-        </div>
-
-        <!-- Brand section -->
-        <div class="brand-header">
-            <h1 class="brand-name">
-                <span>S</span><span>P</span><span>E</span><span>E</span><span>D</span><span>I</span><span>A</span><span>L</span>
-            </h1>
-            <p class="tagline">
-                <span>A</span><span>U</span><span>T</span><span>O</span><span>S</span><span>H</span><span>O</span><span>P</span>
-            </p>
-        </div>
-
-        <!-- Services section -->
-        <div class="services-section">
-            <div class="service-card">
-                <span class="service-icon">🔧</span>
-                <span class="service-label">Bodykit &<br>Upgrades</span>
-            </div>
-            <div class="service-card">
-                <span class="service-icon">⚙</span>
-                <span class="service-label">Parts &<br>Accessories</span>
-            </div>
-            <div class="service-card">
-                <span class="service-icon">🌍</span>
-                <span class="service-label">Import/Sell<br>on Behalf</span>
-            </div>
-            <div class="service-card">
-                <span class="service-icon">🔑</span>
-                <span class="service-label">Car Hire<br>Services</span>
-            </div>
-        </div>
-
-        <!-- Contact footer -->
-        <div class="contact-footer">
-            <p class="contact-text">Get in Touch</p>
-            <div class="contact-buttons">
-                <a href="tel:0704018880" class="contact-btn">
-                    <span class="contact-icon">📞</span>
-                    <span>Call 0704 018 880</span>
-                </a>
-                <a href="https://wa.me/254704018880" class="contact-btn" target="_blank">
-                    <span class="contact-icon">💬</span>
-                    <span>WhatsApp</span>
-                </a>
-            </div>
-        </div>
+  <!-- Logo -->
+  <div class="logo-container">
+    <div class="brand-header">
+      <h1 class="brand-name">SPEEDIAL</h1>
+      <p class="tagline">AUTOSHOP</p>
     </div>
+  </div>
 </body>
 </html>
